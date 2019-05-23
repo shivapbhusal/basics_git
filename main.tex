@@ -1,6 +1,3 @@
-
-
-
 \documentclass[letterpaper]{article}
 
 \usepackage[utf8]{inputenc}
@@ -172,14 +169,11 @@ git branch dev
 \end{lstlisting}
 
 \subsection{git checkout}
-Switches from the current branch to the specified branch.
+It can be used to switch to the specified branch. For example, using the command below, you can switch from current branch to the branch called \textit{dev}.
 
 \begin{lstlisting}[language=Bash]
 git checkout dev
 \end{lstlisting}
-
-Now, we are switched from the master branch to the dev branch.
-
 
 \subsection{git stash}
 Ignores ( undoes) the uncommitted changes made in the local.
@@ -212,9 +206,7 @@ git log
 \end{lstlisting}
 
 \section{Using .gitignore}
-It is not a good practice binary files and executable. You may also want to exclude some directories of your project from the staging. In order to exclude the selective files, a \textit{.gitignore} file can be used.
-
-This will make sure that any file with extension \textit{.log} is ignored while performing the \textit{Git} operations. 
+It is not a good practice to push binary files, log files, and executable. You may also want to exclude some directories of your project from the staging. In order to exclude the selective files, a \textit{.gitignore} file can be used. To learn more about it, refer to the official \href{https://git-scm.com/docs/gitignore}{\textit{gitignore} Documentation}
 
 \end{document}
 
