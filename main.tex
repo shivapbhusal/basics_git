@@ -162,8 +162,7 @@ It creates a new branch. For example, to create a new branch \textit{dev}, you c
 git branch dev
 \end{lstlisting}
 
-\subsection{git checkout}
-You can use \textit{git checkout} command to switch to a specific branch. For example, using the command below, you can switch from the current branch to the branch called \textit{dev}.
+You can use \textit{git checkout} command to switch between branches. For example, you can switch to the branch \textit{dev} using the command below.
 
 \begin{lstlisting}[language=Bash]
 git checkout dev
@@ -171,6 +170,10 @@ git checkout dev
 
 \subsection{git stash}
 It ignores (undoes) the uncommitted changes made in the local copy of the repository.
+
+\begin{lstlisting}[language=Bash]
+git stash
+\end{lstlisting}
 
 \subsection{git merge}
 It merges the changes of the specified branch with the current branch. In this example, the changes committed in \textit{dev} branch are merged with \textit{master} branch. 
