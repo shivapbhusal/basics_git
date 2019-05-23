@@ -74,7 +74,7 @@ pdftitle={\name - \reporttitle},pdfauthor={\name}, unicode]{hyperref}
 \begin{itemize}
     \item It is distributed. So, each developer has a full copy of the repository.
     \item It handles complex merges faster.
-    \item For collaborative development involving thousands of developers, \textit{Git} is suited better suited than centralized version control systems.
+    \item For collaborative development involving thousands of developers, \textit{Git} suits better than centralized version control systems.
     \item Branching is cheap and switching between branches is easy.
     \item In general, it provides more functionality and control than the centralized version control systems.
 \end{itemize}
@@ -125,19 +125,13 @@ Gives the current status of the files in the local repository. The example below
 
 
 \subsection{git add}
-Adds the changes for staging. In other words, this command decides which changes in the current version of the repository will go into the next version.
+Adds the changes for staging. In other words, this command decides which changes in the current version of the repository will go into the next version. For example, to add the un-tracked file \textit{foo.py}, we should use the command below. 
 \begin{lstlisting}[language=Bash]
 git add foo.py
 \end{lstlisting}
 
-In the example above, the file \textit{foo.py} has been added to the staging.
-
 \subsection{git commit}
 Confirms the changes in the local repository. Creates a new version of the repository incorporating the local changes.
-
-\begin{lstlisting}[language=Bash]
-git commit -m "add foo.py"
-\end{lstlisting}
 
 \begin{figure}[h]
     \centering
@@ -155,21 +149,21 @@ git push
 
 
 \subsection{git pull}
-Let's assume, another member of the team has already pushed the changes. In such a case, we do git pull to get the latest changes in the repository. 
+Let's assume, another member of the team has already pushed the changes. In such a case, we do \textit{git pull} to get the latest changes in the repository. 
 
 \begin{lstlisting}[language=Bash]
 git pull
 \end{lstlisting}
 
 \subsection{git branch}
-Creates a new branch. In this example, a new branch of test\_branch is created. 
+Creates a new branch. In this example, a new branch of \textit{dev} is created. 
 
 \begin{lstlisting}[language=Bash]
 git branch dev
 \end{lstlisting}
 
 \subsection{git checkout}
-It can be used to switch to the specified branch. For example, using the command below, you can switch from current branch to the branch called \textit{dev}.
+It can be used to switch to the specified branch. For example, using the command below, you can switch from the current branch to the branch called \textit{dev}.
 
 \begin{lstlisting}[language=Bash]
 git checkout dev
@@ -206,7 +200,7 @@ git log
 \end{lstlisting}
 
 \section{Using .gitignore}
-It is not a good practice to push binary files, log files, and executable. You may also want to exclude some directories of your project from the staging. In order to exclude the selective files, a \textit{.gitignore} file can be used. To learn more about it, refer to the official \href{https://git-scm.com/docs/gitignore}{\textit{gitignore} Documentation}
+It is not a good practice to push binary files, log files, and executable. You may also want to exclude some directories of the project from the staging. In order to exclude the selective files, a \textit{.gitignore} file can be used.To learn more about it,  refer to the official \href{https://git-scm.com/docs/gitignore}{\textit{gitignore} Documentation}
 
 \end{document}
 
