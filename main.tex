@@ -73,77 +73,69 @@ pdftitle={\name - \reporttitle},pdfauthor={\name}, unicode]{hyperref}
 \tableofcontents
   
 \section{Introduction}
-\textit{Git} is a distributed version control system which can serve as a better alternative to centralized version control systems like \textit{TFS} and \textit{SVN}. There are many advantages of Git over the centralized version control systems which can be summarized in the following points:
+\textit{Git} is a distributed version control system which can serve as a better alternative to centralized version control systems like \textit{TFS} and \textit{SVN}. There are many advantages of \textit{Git} over the centralized version control systems which can be summarized in the following points:
 \begin{itemize}
-    \item It is distributed.So,each developer has a full copy of the repository.
+    \item It is distributed. So, each developer has a full copy of the repository.
     \item It handles complex merges faster.
-    \item \textit{Git} is comparatively easier and less complicated for collaborative development, especially involving thousands of developers.
+    \item For collaborative development involving thousands of developers, \textit{Git} is suited better suited than centralized version control systems.
     \item Branching is cheap and switching between branches is easy.
     \item In general, it provides more functionality and control than the centralized version control systems.
 \end{itemize}
 
-Besides, most of the open source projects use \textit{Git} as the version control system. So, if you are interested in open source projects, you are expected to know the basics of \textit{Git}.In this tutorial, you will learn how to install and setup \textit{Git} and use it as a version control system for your projects. 
+Besides, most of the open source projects use \textit{Git} as the version control system. So, if you are interested in open source projects, you are expected to know the basics of \textit{Git}. In this tutorial, you will learn how to install and setup \textit{Git} and use it as a version control system for your projects. 
 
-\section{Installation and setup}
-Git can be downloaded and installed by following the instructions in the link below.\\
+\section{Installation and Setup}
+    Follow the instructions in the link below to download and install \textit{Git}.\\
 
 %\begin{lstlisting}[language=Bash]
 \url{https://git-scm.com/downloads}
 %\end{lstlisting}
 \\
 
-After you install \textit{Git}, create an account on \href{https://github.com/}{Github} or \href{https://about.gitlab.com/}{Gitlab}.
-
-If you are using a Unix system, please use the bash terminal to run the git commands. If you are using Windows, you can use Git Bash.
-
-Then, set up your identity in the computer you have installed \textit{Git}. This will make sure that every time you make the changes and push your changes, the change is associated with you as an author. \\
+After you install \textit{Git}, create an account on \href{https://github.com/}{\textit{Github}} or \href{https://about.gitlab.com/}{\textit{Gitlab}}.
+Then, set up your identity using the commands below.
 
 \begin{lstlisting}[language=Bash]
 git config --global user.name "Jane Doe"
 \end{lstlisting}
 
 \begin{lstlisting}[language=Bash]
-$ git config --global user.email "jane.doe@gmail.com"
+git config --global user.email "jane.doe@gmail.com"
 \end{lstlisting}
 
-After you have setup everything mentioned above, create a repository and refer to the basic Git commands in section 3 to get started. 
+This will make sure that every time you make an update and push it, you are listed as the author of that update.\\
+
+Now, create a repository in \textit{Github} or \textit{Gitlab}, and to get started, refer to the basic commands in section 3.
 
 \section{Basic Git Commands}
-Below are some of the useful Git commands, with corresponding examples:
-
 \subsection{git clone}
-\begin{lstlisting}[language=Bash]
-git clone https://github.com/shivapbhusal/git-demo.git
-\end{lstlisting}
 It creates the local copy of the repository. In the example below, we are creating a local copy of the repository \textit{git-demo}.
 
  \begin{figure}[h]
     \centering
     \frame{\includegraphics[scale=0.56]{figure/clone.png}}
-    \caption{Cloning the demo repository}
+    \caption{Cloning repository \textit{git-demo}}
   \end{figure}
 
-\subsection{status}
-Gives the current status of the files in the local repository. The command below shows that there is an un-tracked file called \textit{foo.py} which has been created recently.
-
-\begin{lstlisting}[language=Bash]
-git status
-\end{lstlisting}
+\subsection{git status}
+Gives the current status of the files in the local repository. The example below shows that there is an un-tracked file called \textit{foo.py} which has been created recently.
 
 \begin{figure}[h]
     \centering
     \frame{\includegraphics[scale=0.7]{figure/status.png}}
-    \caption{Git status after creating one file called foo.py}
+    \caption{\textit{git status} after creating one file called \textit{foo.py}}
   \end{figure}
 
 
-\subsection{add}
+\subsection{git add}
 Adds the changes for staging. In other words, this command decides which changes in the current version of the repository will go into the next version.
 \begin{lstlisting}[language=Bash]
 git add foo.py
 \end{lstlisting}
 
-\subsection{commit}
+In the example above, the file \textit{foo.py} has been added to the staging.
+
+\subsection{git commit}
 Confirms the changes in the local repository. Creates a new version of the repository incorporating the local changes.
 
 \begin{lstlisting}[language=Bash]
@@ -153,45 +145,33 @@ git commit -m "add foo.py"
 \begin{figure}[h]
     \centering
     \frame{\includegraphics[scale=0.8]{figure/commit.png}}
-    \caption{Git commit operation}
+    \caption{\textit{git commit} operation}
   \end{figure}
 
 
-\subsection{push}
+\subsection{git push}
 Merges the locally committed changes with the repository in the remote server.
 
 \begin{lstlisting}[language=Bash]
 git push
 \end{lstlisting}
 
-\begin{figure}[h]
-    \centering
-    \frame{\includegraphics[scale=0.7]{figure/push.png}}
-    \caption{Git commit operation}
-  \end{figure}
 
-\subsection{pull}
+\subsection{git pull}
 Let's assume, another member of the team has already pushed the changes. In such a case, we do git pull to get the latest changes in the repository. 
 
 \begin{lstlisting}[language=Bash]
 git pull
 \end{lstlisting}
 
-\begin{figure}[h]
-    \centering
-    \frame{\includegraphics[scale=0.7]{figure/pull.png}}
-    \caption{Git pull operation}
-  \end{figure}
-
-
-\subsection{branch}
+\subsection{git branch}
 Creates a new branch. In this example, a new branch of test\_branch is created. 
 
 \begin{lstlisting}[language=Bash]
 git branch dev
 \end{lstlisting}
 
-\subsection{checkout}
+\subsection{git checkout}
 Switches from the current branch to the specified branch.
 
 \begin{lstlisting}[language=Bash]
@@ -201,7 +181,7 @@ git checkout dev
 Now, we are switched from the master branch to the dev branch.
 
 
-\subsection{stash}
+\subsection{git stash}
 Ignores ( undoes) the uncommitted changes made in the local.
 \begin{lstlisting}[language=Bash]
 git stash
@@ -213,11 +193,7 @@ git stash
     \caption{Git stash operation}
   \end{figure}
 
-
-
-
-
-\subsection{merge}
+\subsection{git merge}
 \begin{lstlisting}[language=Bash]
 git merge origin/dev
 \end{lstlisting}
@@ -225,11 +201,11 @@ Merges the changes of the specified branch with the current branch. In this exam
 
 \begin{figure}[h]
     \centering
-    \frame{\includegraphics[scale=0.7]{figure/merge.png}}
+    \frame{\includegraphics[scale=0.85]{figure/merge.png}}
     \caption{Git merge operation}
   \end{figure}
 
-\subsection{log}
+\subsection{git log}
 Displays the version history of the repository or the list of the historical commits. 
 \begin{lstlisting}[language=Bash]
 git log
