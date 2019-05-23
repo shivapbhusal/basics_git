@@ -9,7 +9,7 @@
 %New colors defined below
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{codepurple}{rgb}{0.58,0,0.90}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
 %Code listing style named "mystyle"
@@ -79,7 +79,7 @@ pdftitle={\name - \reporttitle},pdfauthor={\name}, unicode]{hyperref}
     \item In general, it provides more functionality and control than the centralized version control systems.
 \end{itemize}
 
-Besides, most of the open source projects use \textit{Git} as the version control system. So, if you are interested in open source projects, you are expected to know the basics of \textit{Git}. In this tutorial, you will learn how to install and setup \textit{Git} and use it as a version control system for your projects. 
+Besides, most of the open source projects use \textit{Git} as the version control system. So, if you are interested in open source contribution, you are expected to know the basics of \textit{Git}. In this tutorial, you will learn how to install and setup \textit{Git} and use it as a version control system for your projects. 
 
 \section{Installation and Setup}
     Follow the instructions in the link below to download and install \textit{Git}.\\
@@ -90,23 +90,23 @@ Besides, most of the open source projects use \textit{Git} as the version contro
 \\
 
 After you install \textit{Git}, create an account on \href{https://github.com/}{\textit{Github}} or \href{https://about.gitlab.com/}{\textit{Gitlab}}.
-Then, set up your identity using the commands below.
+Then, set up your identity using the commands below.\\
 
 \begin{lstlisting}[language=Bash]
 git config --global user.name "Jane Doe"
-\end{lstlisting}
-
-\begin{lstlisting}[language=Bash]
 git config --global user.email "jane.doe@gmail.com"
 \end{lstlisting}
 
 This will make sure that every time you make an update and push it, you are listed as the author of that update.\\
 
-Now, create a repository in \textit{Github} or \textit{Gitlab}, and to get started, refer to the basic commands in section 3.
+\section{Creating Repository}
+This tutorial is based on the assumption that you are using \textit{Github} or \textit{Gitlab}.To get started, create a repository in \textit{Github} or \textit{Gitlab} using the web browser. \\
+
+Alternatively, you can also use \textit{git init} command to create a repository in your local machine. You can learn more about \textit{git init} in the \href{https://git-scm.com/docs/git-init}{\textit{Git} Documentation}
 
 \section{Basic Git Commands}
 \subsection{git clone}
-It creates the local copy of the repository. In the example below, we are creating a local copy of the repository \textit{git-demo}.
+It creates a replica of the specified repository. In the example below, the command replicates the repository named \textit{git-demo}.
 
  \begin{figure}[h]
     \centering
@@ -115,23 +115,23 @@ It creates the local copy of the repository. In the example below, we are creati
   \end{figure}
 
 \subsection{git status}
-Gives the current status of the files in the local repository. The example below shows that there is an un-tracked file called \textit{foo.py} which has been created recently.
+It displays the current status of the files in the local repository. The example below shows that there is an un-tracked file called \textit{foo.py}.
 
 \begin{figure}[h]
     \centering
     \frame{\includegraphics[scale=0.7]{figure/status.png}}
-    \caption{\textit{git status} after creating one file called \textit{foo.py}}
+    \caption{\textit{git status} after creating \textit{foo.py}}
   \end{figure}
 
 
 \subsection{git add}
-Adds the changes for staging. In other words, this command decides which changes in the current version of the repository will go into the next version. For example, to add the un-tracked file \textit{foo.py}, we should use the command below. 
+This command adds the changes for staging. In other words, it marks the specified changes in the current version of the repository which will go into the next version. For example, to add the un-tracked file, \textit{foo.py}, you can use the command below.
 \begin{lstlisting}[language=Bash]
 git add foo.py
 \end{lstlisting}
 
 \subsection{git commit}
-Confirms the changes in the local repository. Creates a new version of the repository incorporating the local changes.
+ After \textit{git commit}, a new version of the local repository is created which consists of all the changes added.
 
 \begin{figure}[h]
     \centering
@@ -141,7 +141,7 @@ Confirms the changes in the local repository. Creates a new version of the repos
 
 
 \subsection{git push}
-Merges the locally committed changes with the repository in the remote server.
+It merges the locally committed changes with the repository in the remote server.
 
 \begin{lstlisting}[language=Bash]
 git push
@@ -149,58 +149,46 @@ git push
 
 
 \subsection{git pull}
-Let's assume, another member of the team has already pushed the changes. In such a case, we do \textit{git pull} to get the latest changes in the repository. 
+Suppose, another member of the team has already pushed the changes. In such situations, you can use \textit{git pull} command to get the latest changes in the repository. 
 
 \begin{lstlisting}[language=Bash]
 git pull
 \end{lstlisting}
 
 \subsection{git branch}
-Creates a new branch. In this example, a new branch of \textit{dev} is created. 
+It creates a new branch. For example, to create a new branch \textit{dev}, you can use the command below. 
 
 \begin{lstlisting}[language=Bash]
 git branch dev
 \end{lstlisting}
 
 \subsection{git checkout}
-It can be used to switch to the specified branch. For example, using the command below, you can switch from the current branch to the branch called \textit{dev}.
+You can use \textit{git checkout} command to switch to a specific branch. For example, using the command below, you can switch from the current branch to the branch called \textit{dev}.
 
 \begin{lstlisting}[language=Bash]
 git checkout dev
 \end{lstlisting}
 
 \subsection{git stash}
-Ignores ( undoes) the uncommitted changes made in the local.
-\begin{lstlisting}[language=Bash]
-git stash
-\end{lstlisting}
-
-\begin{figure}[h]
-    \centering
-    \frame{\includegraphics[scale=0.7]{figure/stash.png}}
-    \caption{Git stash operation}
-  \end{figure}
+It ignores (undoes) the uncommitted changes made in the local copy of the repository.
 
 \subsection{git merge}
-\begin{lstlisting}[language=Bash]
-git merge origin/dev
-\end{lstlisting}
-Merges the changes of the specified branch with the current branch. In this example, the changes committed in the test\_branch are merged with the master branch. 
+It merges the changes of the specified branch with the current branch. In this example, the changes committed in \textit{dev} branch are merged with \textit{master} branch. 
 
 \begin{figure}[h]
     \centering
     \frame{\includegraphics[scale=0.85]{figure/merge.png}}
-    \caption{Git merge operation}
+    \caption{\textit{git merge} operation}
   \end{figure}
 
 \subsection{git log}
-Displays the version history of the repository or the list of the historical commits. 
+It displays the version history of the repository or the list of the historical commits. 
 \begin{lstlisting}[language=Bash]
 git log
 \end{lstlisting}
 
 \section{Using .gitignore}
-It is not a good practice to push binary files, log files, and executable. You may also want to exclude some directories of the project from the staging. In order to exclude the selective files, a \textit{.gitignore} file can be used.To learn more about it,  refer to the official \href{https://git-scm.com/docs/gitignore}{\textit{gitignore} Documentation}
+It is not a good practice to push binary files, log files, and executable. You may also want to exclude some directories of the project from being pushed. In order to exclude the selective files and directories, a \textit{.gitignore} file can be used.To learn more about it,  refer to the official \href{https://git-scm.com/docs/gitignore}{\textit{Git} Documentation}
 
 \end{document}
 
